@@ -113,6 +113,8 @@ ___
 
 You can change in what color the image is drawn with `love.graphics.setColor(r, g, b)`. It sets the color for everything you draw, so not only images but rectangles, shapes and lines as well. It uses the [RGB-system](https://en.wikipedia.org/wiki/RGB_color_model). Although this officially ranges from 0 to 255, with LÖVE it ranges from 0 to 1. So instead of (255, 200, 40) you would use (1, 0.78, 0.15). If you only know the color using the 0-255 range, you can calculate the number you want with `number/255`. There is also the fourth argument `a` which stands for alpha and decides the transparency of everything you draw. Don't forget to set the color back to white if you don't want the color for any other draw calls. You can set the background color with `love.graphics.setBackgroundColor(r, g, b)`. Since we only want to call it once, we can call it in `love.load`.
 
+*Note: in most later versions of love, including the version on repl.it, you no longer divide by 255. Instead use the number from 0-255 (ex: setColor(40,240,255) would be teal)*
+
 ```lua
 function love.load()
     myImage = love.graphics.newImage("sheep.png")
